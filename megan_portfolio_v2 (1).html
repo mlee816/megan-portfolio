@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Megan Lee, Junior in Computer Engineering @ Georgia Tech.">
+  <title>Megan Lee</title>
+  <style>
+    :root {
+      --ink: #202a32;
+      --muted: #68747d;
+      --line: #e7eaed;
+      --accent: #315f78;
+      --width: 900px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: #fff; color: var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.68; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page { width: min(var(--width), calc(100% - 48px)); margin: 0 auto; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 23px 0; border-bottom: 1px solid var(--line); font-size: .9rem;
+    }
+    .brand { color: var(--ink); font-weight: 650; }
+    nav { display: flex; gap: 20px; }
+    nav a { color: var(--muted); }
+    .hero { padding: 78px 0 62px; max-width: 760px; }
+    .location { color: var(--muted); font-size: .88rem; }
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 4.5rem); letter-spacing: -.065em;
+      line-height: 1.05; margin: 10px 0 15px; font-weight: 680;
+    }
+    .headline { color: #46545e; font-size: 1.3rem; margin: 0 0 17px; }
+    .intro { color: #596670; max-width: 690px; font-size: 1.02rem; }
+    .links { display: flex; gap: 18px; margin-top: 23px; font-size: .92rem; }
+    .links a { border-bottom: 1px solid #c4d0d7; padding-bottom: 2px; }
+    section { padding: 37px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 1.03rem; margin: 0 0 20px; font-weight: 650; letter-spacing: -.01em; }
+    .about { color: #596670; max-width: 760px; margin: 0; }
+    .skills { color: #53616b; font-size: .94rem; line-height: 2; }
+    .project {
+      display: grid; grid-template-columns: 185px 1fr; gap: 24px;
+      padding: 23px 0; border-top: 1px solid var(--line);
+    }
+    .project:first-of-type { border-top: 0; padding-top: 0; }
+    .project-type { color: var(--muted); font-size: .83rem; padding-top: 5px; }
+    h3 { font-size: 1.13rem; margin: 0 0 7px; font-weight: 650; letter-spacing: -.02em; }
+    .project p { color: #596670; margin: 0 0 10px; }
+    .experience-item {
+      display: grid; grid-template-columns: 185px 1fr; gap: 24px;
+      padding: 18px 0; border-top: 1px solid var(--line);
+    }
+    .experience-item:first-of-type { border-top: 0; padding-top: 0; }
+    .date { color: var(--muted); font-size: .85rem; }
+    .org { color: var(--muted); font-size: .9rem; margin: 1px 0 8px; }
+    ul { margin: 7px 0 0; padding-left: 19px; color: #596670; }
+    li { margin: 5px 0; }
+    .education { display: flex; justify-content: space-between; gap: 20px; }
+    .education p { margin: 0; }
+    .education .muted { color: var(--muted); font-size: .9rem; }
+    footer { border-top: 1px solid var(--line); padding: 25px 0 38px; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 650px) {
+      .page { width: calc(100% - 36px); }
+      header { align-items: flex-start; gap: 14px; }
+      nav { gap: 12px; flex-wrap: wrap; justify-content: flex-end; font-size: .82rem; }
+      .hero { padding: 58px 0 45px; }
+      section { padding: 30px 0; }
+      .project, .experience-item { grid-template-columns: 1fr; gap: 5px; }
+      .education { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+
+    <main>
+      <div class="hero">
+        <div class="location">Junior in Computer Engineering @ Georgia Tech</div>
+        <h1>Megan Lee</h1>
+        <p class="intro">
+          I'm studying Computer Engineering at Georgia Tech. Most of my experience so far has
+          been in embedded software: writing firmware, working with sensors and microcontrollers,
+          and figuring out how software behaves on actual hardware. Looking for spring and summer 2027 internships.
+        </p>
+        <div class="links">
+          <a href="mailto:mlee816@gatech.edu">Email</a>
+          <a href="https://www.linkedin.com/in/megan-lee-ce/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <!-- Add your GitHub profile link here when ready. -->
+        </div>
+      </div>
+
+      <section id="about">
+        <h2>Tools I use</h2>
+        <p class="skills">
+          C · C++ · Python · Java · VHDL · SystemVerilog · Linux · Git · FreeRTOS ·
+          UART · CAN · ZMQ/TCP · Google Test · PlatformIO · Teensy 4.1 · ESP32 ·
+          Oscilloscopes · Spectrum Analyzers · Logic Analyzers
+        </p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <article class="project">
+          <div class="project-type">HyTech Racing</div>
+          <div>
+            <h3>Steering System Firmware</h3>
+            <p>
+              I worked on the steering firmware for Georgia Tech's Formula SAE team. The system
+              reads an analog potentiometer and a digital encoder at 500 Hz and turns those inputs
+              into steering measurements for vehicle control.
+            </p>
+            <ul>
+            <li>
+              Developed the C++ firmware interface, including bit masks, command constants, an error struct, and 
+                public functions for data sampling and sensor calibration.
+            </li>
+            <li>
+              Built a steering system layer on top of the interface, implementing a rolling buffer of readings,
+                min/max tracking, timestamped data, steering angle conversions, and sensor arbitration logic with error flagging
+                implemented based on velocity, sudden changes, out-of range values.
+            </li>
+            <li>
+              Implemented software calibration triggered through a CAN message chain: button press -> CAN message -> received
+                by VCR FSM -> state validation -> calibration command sent back to VCF -> steering system recalibrates parameters.
+            </li>
+            </ul>
+            <p class="skills">C++ · Teensy 4.1 · Sensors · Google Test</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-type">Personal project</div>
+          <div>
+            <h3>ESP32 Embedded Arcade Game</h3>
+            <p>
+              I built the game from start to finish in C on an ESP32, using a uLCD for the
+              display. I wrote the game loop and collision detection, and generated the map
+              dynamically with a hash-table-based tile system.
+            </p>
+            <ul>
+              <li>Developed core gameplay mechanics including player movement, gravity, collision detection, and dynamic map generation.              </li>
+              <li>Implemented interactive game systems including stinger attacks, beam mechanics, collectibles, poison/healing items, and player health management.</li>
+              <li>Built scoring, attack energy, and game state management, including win/loss conditions, replay functionality, and a leaderboard.</li>
+              <li>Created custom sprites, animations, and sound effects to support gameplay.</li>
+              <li>Debugged timer interrupt conflicts and LCD rendering latency while optimizing game responsiveness on a resource-constrained microcontroller.</li>
+            </ul>
+            <p class="skills">C · ESP32 · FreeRtos · Embedded Systems · uLCD · Interrupts</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-type">Digital Design Lab</div>
+          <div>
+            <h3>ADC Peripheral for the SCOMP Processor</h3>
+            <p>
+              I designed a memory-mapped ADC peripheral in VHDL so the SCOMP processor could
+              read analog voltage levels. The hardware also handles threshold comparisons,
+              rather than making the processor do that work in software.
+            </p>
+            <p>
+              I packed the 12-bit ADC reading and two threshold flags into one 16-bit register,
+              accessible through the processor's IN/OUT instructions.
+            </p>
+            <p class="skills">VHDL · Digital Logic · Memory-Mapped I/O</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <article class="experience-item">
+          <div class="date">Aug 2026 - Present</div>
+          <div>
+            <h3>Embedded Software Intern</h3>
+            <div class="org">Georgia Tech Research Institute · ICL/CSSD</div>
+            <ul>
+              <li>Reworked a C/C++ integration layer between real-time software applications and production radio hardware, including service model targeting, payload decoding, and IPC/shared-memory transport.</li>
+              <li>Built an outlier detection algorithm for live streaming data, mapped detected resource blocks to absolute RF frequencies, and exposed results through a REST endpoint. Processing time was 0.112 ms, results shared in sponsor presentation representing ICL.</li>
+              <li>Working on CUDA-accelerated processing in the OCUDU software stack for ESPRIT beamforming workloads. Integrating a 4T4R radio.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="experience-item">
+          <div class="date">Aug 2025 - Jun 2026</div>
+          <div>
+            <h3>PLUS Leader - CS1301</h3>
+            <div class="org">Georgia Tech · Office of Undergraduate Education</div>
+            <ul>
+              <li>Led weekly Python review sessions for 40–60 students, helping with debugging and topics such as recursion, file I/O, and object-oriented programming.</li>
+              <li>Wrote original practice problem sets twice a week, focused on concepts students commonly struggled with.</li>
+              <li>Had 15-20 consistent weekly returner students for both semesters that I held the position, received positive feedback from course professor based on student assessments.</li>
+
+            </ul>
+          </div>
+        </article>
+        <article class="experience-item">
+          <div class="date">Aug 2025 - Jan 2026</div>
+          <div>
+            <h3>Adaptive Learning Developer & Researcher</h3>
+            <div class="org">BrainBoost · Vertically Integrated Project</div>
+            <ul>
+              <li>Organized 100+ introductory CS problem sets into a hierarchical catalog of concepts and prerequisites.</li>
+              <li>Added concept embeddings to an LSTM knowledge-tracing model to help estimate student mastery and identify learning gaps.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="education">
+          <p><strong>Georgia Institute of Technology</strong><br><span class="muted">B.S. Computer Engineering, minor in Neuroscience</span></p>
+          <p class="muted">Expected May 2028<br>Atlanta, Georgia</p>
+        </div>
+      </section>
+
+
+    </main>
+
+  </div>
+</body>
+</html>
